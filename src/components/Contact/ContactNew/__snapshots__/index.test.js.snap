@@ -1,0 +1,96 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ContactNew renders correctly 1`] = `
+Array [
+  <form
+    autoComplete="off"
+    className=""
+    noValidate={true}
+    onSubmit={[Function]}
+>
+    <WithStyles(Typography)
+        component="h2"
+        gutterBottom={true}
+        variant="headline"
+    >
+        Add New Contact
+    </WithStyles(Typography)>
+    <TextField
+        className={undefined}
+        id="firstName"
+        label="First Name"
+        margin="normal"
+        name="firstName"
+        onChange={[Function]}
+        required={true}
+        select={false}
+        style={
+            Object {
+                "marginLeft": 0,
+                "marginRight": 0,
+              }
+        }
+        value={undefined}
+        variant="standard"
+    />
+    <TextField
+        className={undefined}
+        id="lastName"
+        label="Last Name"
+        margin="normal"
+        name="lastName"
+        onChange={[Function]}
+        required={true}
+        select={false}
+        style={
+            Object {
+                "marginLeft": 0,
+                "marginRight": 0,
+              }
+        }
+        value={undefined}
+        variant="standard"
+    />
+    <TextField
+        className={undefined}
+        id="email"
+        label="Email"
+        margin="normal"
+        name="email"
+        onChange={[Function]}
+        required={true}
+        select={false}
+        style={
+            Object {
+                "marginLeft": 0,
+                "marginRight": 0,
+              }
+        }
+        value={undefined}
+        variant="standard"
+    />
+    <div
+        className={undefined}
+    >
+        <WithStyles(Button)
+            className={undefined}
+            name="cancel"
+            onClick={undefined}
+            size="large"
+            type="button"
+        >
+            Cancel
+        </WithStyles(Button)>
+        <WithStyles(Button)
+            color="primary"
+            name="submit"
+            size="large"
+            type="submit"
+            variant="contained"
+        >
+            Add
+        </WithStyles(Button)>
+    </div>
+</form>,
+]
+`;

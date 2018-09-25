@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Contacts renders correctly 1`] = `
+Array [
+  <WithStyles(Grid)
+    container={true}
+    spacing={24}
+    style={
+        Object {
+            "margin": "0px",
+            "padding": "20px",
+            "width": "100%",
+          }
+    }
+>
+    <WithStyles(ContactNav)
+        handleOpen={[Function]}
+        handleSort={[Function]}
+        sortBy="lastName"
+    />
+    <WithStyles(ContactGrid)
+        contacts={undefined}
+        sortBy="lastName"
+    />
+    <WithStyles(Modal)
+        aria-describedby="new-contact-modal"
+        aria-labelledby="new-contact-modal"
+        onClose={[Function]}
+        open={undefined}
+    >
+        <div
+            className=""
+        >
+            <Connect(WithStyles(ContactNew))
+                handleClose={[Function]}
+            />
+        </div>
+    </WithStyles(Modal)>
+</WithStyles(Grid)>,
+]
+`;

@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ContactNav renders correctly 1`] = `
+Array [
+  <ContactGrid
+    classes={
+        Object {
+            "card": "ContactGrid-card-1",
+            "media": "ContactGrid-media-2",
+          }
+    }
+    contacts={
+        Array [
+            Object {
+              "_id": "5ba6ded814f01c02d31cc886",
+              "email": "email@email.com",
+              "firstName": "First",
+              "lastName": "Last",
+            },
+            Object {
+              "_id": "5ba6ded814f01c02d31cc887",
+              "email": "zmail@zmailz.com",
+              "firstName": "Name",
+              "lastName": "Nomma",
+            },
+          ]
+    }
+    sortBy="lastName"
+/>,
+]
+`;

@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ContactNav renders correctly 1`] = `
+Array [
+  <ContactNav
+    classes={
+        Object {
+            "button": "ContactNav-button-4",
+            "extendedIcon": "ContactNav-extendedIcon-5",
+            "formControl": "ContactNav-formControl-2",
+            "root": "ContactNav-root-1",
+            "selectEmpty": "ContactNav-selectEmpty-3",
+          }
+    }
+/>,
+]
+`;
