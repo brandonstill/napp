@@ -24,8 +24,39 @@ const styles = theme => ({
 export class ContactNew extends Component {
   state = {
     firstName: '',
+    firstNameError: false,
     lastName: '',
-    email: ''
+    lastNameError: false,
+    email: '',
+    emailError: false
+  }
+
+  checkErrors = () => {
+    let valid;
+
+    const fields = [
+      'firstName',
+      'lastName',
+      'email'
+    ]
+
+    const emailPattern = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
+
+    fields.forEach(field => {
+      if (this.state[field] === '') {
+        console.log(`field`);
+        console.log(`${field}error`);
+        this.setState({ [`${field}Error`]: true } );
+        valid = false;
+      } else if (!emailPattern.test(this.state.email)) {
+        this.setState({ emailError: true } );
+      } else {
+        this.setState({ [`${field}Error`]: false } );
+        valid = true;
+      }
+    });
+
+    return valid;
   }
 
   handleChange = (name, event) => event => {
@@ -36,7 +67,12 @@ export class ContactNew extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
-    this.props.handleSave(this.state);
+    const valid = this.checkErrors();
+
+    if (valid) {
+      this.props.handleSave(this.state);
+    }
+
   }
 
   renderField = (label, type, name) => {
@@ -56,6 +92,7 @@ export class ContactNew extends Component {
         value={this.state.name}
         onChange={this.handleChange(name)}
         margin="normal"
+        error= {this.state[`${name}Error`]}
         style={{
           marginLeft: 0,
           marginRight: 0
