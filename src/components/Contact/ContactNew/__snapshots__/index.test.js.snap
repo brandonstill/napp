@@ -17,6 +17,7 @@ Array [
     </WithStyles(Typography)>
     <TextField
         className={undefined}
+        error={false}
         id="firstName"
         label="First Name"
         margin="normal"
@@ -35,6 +36,7 @@ Array [
     />
     <TextField
         className={undefined}
+        error={false}
         id="lastName"
         label="Last Name"
         margin="normal"
@@ -53,6 +55,7 @@ Array [
     />
     <TextField
         className={undefined}
+        error={false}
         id="email"
         label="Email"
         margin="normal"

@@ -24,10 +24,10 @@ const styles = theme => ({
 export class ContactNew extends Component {
   state = {
     firstName: '',
-    firstNameError: false,
     lastName: '',
-    lastNameError: false,
     email: '',
+    firstNameError: false,
+    lastNameError: false,
     emailError: false
   }
 
@@ -70,7 +70,11 @@ export class ContactNew extends Component {
     const valid = this.checkErrors();
 
     if (valid) {
-      this.props.handleSave(this.state);
+      this.props.handleSave({
+        firstName: this.state.firstName, 
+        lastName: this.state.lastName, 
+        email: this.state.email
+      });
     }
 
   }
