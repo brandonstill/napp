@@ -8,7 +8,6 @@
 
 # production
 /build
-api.js
 
 # misc
 .DS_Store
