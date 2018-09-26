@@ -42,4 +42,11 @@ describe('Contacts', () => {
     expect(spy).toHaveBeenCalledWith(false);
   });
 
+  it('handleSave calls saveContact action with true', () => {
+    const spy = jest.fn();
+    const wrapper = shallow(<Contact saveContact={spy} fetchContacts={() => {}} classes={{paper:''}} />).instance();
+    wrapper.handleSave();
+    expect(spy).toHaveBeenCalled();
+  });
+
 });

@@ -31,8 +31,9 @@ Array [
         <div
             className=""
         >
-            <Connect(WithStyles(ContactNew))
+            <WithStyles(ContactNew)
                 handleClose={[Function]}
+                handleSave={[Function]}
             />
         </div>
     </WithStyles(Modal)>

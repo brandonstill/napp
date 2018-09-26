@@ -22,19 +22,12 @@ describe('ContactNew', () => {
     expect(wrapper.state('firstName')).toBe('First Name');
   });
 
-  it('handleSubmit call saveContact action with component state', () => {
+  it('handleSubmit call handleSave action with component state', () => {
     const event = { preventDefault: jest.fn() };
     const spy = jest.fn();
-    const wrapper = shallow(<ContactNew saveContact={spy} classes={{container:''}} />).instance();
+    const wrapper = shallow(<ContactNew handleSave={spy} classes={{container:''}} />).instance();
     wrapper.handleSubmit(event);
     expect(spy).toHaveBeenCalledWith({ firstName: '', lastName: '', email: '' });
-  });
-
-  it('Submit button calls saveContact action', () => {
-    const spy = jest.fn();
-    const wrapper = mount(<ContactNew saveContact={spy} classes={{container:''}} />);
-    wrapper.find('Button[name="submit"]').simulate('submit');
-    expect(spy).toHaveBeenCalled();
   });
 
   it('Cancel button calls handleClose', () => {
