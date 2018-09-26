@@ -32,7 +32,6 @@ export class ContactNew extends Component {
   }
 
   checkErrors = () => {
-    let valid;
 
     const fields = [
       'firstName',
@@ -44,19 +43,22 @@ export class ContactNew extends Component {
 
     fields.forEach(field => {
       if (this.state[field] === '') {
-        console.log(`field`);
-        console.log(`${field}error`);
         this.setState({ [`${field}Error`]: true } );
-        valid = false;
-      } else if (!emailPattern.test(this.state.email)) {
-        this.setState({ emailError: true } );
       } else {
         this.setState({ [`${field}Error`]: false } );
-        valid = true;
+      }
+      
+      if (!emailPattern.test(this.state.email)) {
+        this.setState({ emailError: true } );
+      } else {
+        this.setState({ emailError: false } );
       }
     });
 
-    return valid;
+    if (this.state.firstName !== '' && this.state.lastName !== '' && this.state.email !== '' && emailPattern.test(this.state.email)) {
+      return true;
+    }
+
   }
 
   handleChange = (name, event) => event => {

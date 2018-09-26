@@ -25,7 +25,8 @@ const styles = theme => ({
     margin: theme.spacing.unit,
     position: 'fixed',
     bottom: 24,
-    right: 24
+    right: 24,
+    zIndex: 1
   },
   extendedIcon: {
     marginRight: theme.spacing.unit,
