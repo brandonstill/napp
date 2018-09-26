@@ -31,8 +31,6 @@ export class ContactNew extends Component {
   }
 
   handleChange = (name, event) => event => {
-    console.log(name);
-    console.log(event);
     this.setState({
       [name]: event.target.value,
     });
@@ -40,7 +38,7 @@ export class ContactNew extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
-    this.props.saveContact(this.state);
+    this.props.handleSave(this.state);
   }
 
   renderField = (label, type, name) => {
@@ -112,11 +110,4 @@ export class ContactNew extends Component {
   }
 }
 
-const mapDispatchToProps = dispatch => {
-  return {
-    saveContact: (data) => dispatch(saveContact(data))
-  }
-}
-
-const styledComponent = withStyles(styles)(ContactNew);
-export default connect(null, mapDispatchToProps)(styledComponent);
+export default withStyles(styles)(ContactNew);

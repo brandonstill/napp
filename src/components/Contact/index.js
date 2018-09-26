@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetchContacts, contactModal } from '../../store/actions';
+import { fetchContacts, contactModal, saveContact } from '../../store/actions';
 import Grid from '@material-ui/core/Grid';
 import ContactNav from './ContactNav';
 import ContactGrid from './ContactGrid';
@@ -45,6 +45,10 @@ export class Contact extends Component {
     this.props.contactModal(false);
   }
 
+  handleSave = data => {
+    this.props.saveContact(data);
+  }
+
   render() {
     return (
       <Grid 
@@ -69,7 +73,7 @@ export class Contact extends Component {
           onClose={this.handleClose}
         >
           <div className={this.props.classes.paper}>
-            <ContactNew handleClose={this.handleClose} />
+            <ContactNew handleClose={this.handleClose} handleSave={this.handleSave}/>
           </div>
         </Modal>
       </Grid>
@@ -87,7 +91,8 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     fetchContacts: () => dispatch(fetchContacts()),
-    contactModal: (b) => dispatch(contactModal(b))
+    contactModal: (b) => dispatch(contactModal(b)),
+    saveContact: (data) => dispatch(saveContact(data))
   }
 }
 
