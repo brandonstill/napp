@@ -40,7 +40,7 @@ const ContactGrid = props => {
 
     return _.map(orderedContacts, (contact, i) => {
       return (
-        <Grid item xs={12} sm={12} md={3} lg={3}>
+        <Grid item xs={12} sm={12} md={3} lg={3} key={contact._id}>
           <Grow 
             in={true}
             style={{ transformOrigin: '0 0 0' }}
@@ -64,6 +64,10 @@ const ContactGrid = props => {
   }
 
   return (
+    // <ul>
+    //   {renderContacts()}
+    // </ul>
+
     <Grid
       container
       direction="row"
