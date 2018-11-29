@@ -4,7 +4,9 @@ import React from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Card from '@material-ui/core/Card';
+import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
+import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import Grow from '@material-ui/core/Grow';
 
@@ -30,14 +32,6 @@ const ContactGrid = props => {
       ['asc']
     );
 
-    // return _.map(orderedContacts, contact => {
-    //   return (
-    //     <li className="list-group-item" key={contact._id}>
-    //       {contact.firstName} {contact.lastName} {contact.email}
-    //     </li>
-    //   );
-    // });
-
     return _.map(orderedContacts, (contact, i) => {
       return (
         <Grid item xs={12} sm={12} md={3} lg={3} key={contact._id}>
@@ -56,6 +50,9 @@ const ContactGrid = props => {
                 {contact.email}
                 </Typography>
               </CardContent>
+              <CardActions>
+                <Button size="small" onClick={(e) => props.handleDelete(e, contact._id)}>DELETE</Button>
+              </CardActions>
             </Card>
           </Grow>
         </Grid>
@@ -64,10 +61,6 @@ const ContactGrid = props => {
   }
 
   return (
-    // <ul>
-    //   {renderContacts()}
-    // </ul>
-
     <Grid
       container
       direction="row"

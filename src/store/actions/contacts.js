@@ -18,6 +18,13 @@ export const saveContact = data => {
   }
 }
 
+export const deleteContact = data => {
+  return { 
+    type: actionTypes.DELETE_CONTACT,
+    payload: data
+  }
+}
+
 export const contactModal = data => {
   return { 
     type: actionTypes.CONTACT_MODAL,

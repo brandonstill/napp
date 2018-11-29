@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetchContacts, contactModal, saveContact } from '../../store/actions';
+import { fetchContacts, contactModal, saveContact, deleteContact } from '../../store/actions';
 import Grid from '@material-ui/core/Grid';
 import ContactNav from './ContactNav';
 import ContactGrid from './ContactGrid';
@@ -49,6 +49,12 @@ export class Contact extends Component {
     this.props.saveContact(data);
   }
 
+  handleDelete = (e, data) => {
+    e.preventDefault();
+    const id = { id: data }
+    this.props.deleteContact(id);
+  }
+
   render() {
     return (
       <Grid 
@@ -65,7 +71,11 @@ export class Contact extends Component {
           handleSort={this.handleSort} 
           sortBy={this.state.sortBy} 
         />
-        <ContactGrid contacts={this.props.contacts} sortBy={this.state.sortBy} />
+        <ContactGrid 
+          contacts={this.props.contacts} 
+          sortBy={this.state.sortBy}
+          handleDelete={this.handleDelete}
+        />
         <Modal
           aria-labelledby="new-contact-modal"
           aria-describedby="new-contact-modal"
@@ -92,7 +102,8 @@ const mapDispatchToProps = dispatch => {
   return {
     fetchContacts: () => dispatch(fetchContacts()),
     contactModal: (b) => dispatch(contactModal(b)),
-    saveContact: (data) => dispatch(saveContact(data))
+    saveContact: (data) => dispatch(saveContact(data)),
+    deleteContact: (data) => dispatch(deleteContact(data))
   }
 }
 

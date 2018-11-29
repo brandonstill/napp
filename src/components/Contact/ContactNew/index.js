@@ -119,7 +119,7 @@ export class ContactNew extends Component {
       //     <button type="button" onClick={this.props.handleClose}>Cancel</button>
       //   </div>
       // </form>
-      <form className={this.props.classes.container} noValidate autoComplete="off" onSubmit={this.handleSubmit}>
+      <form className="ContactNew-form" noValidate autoComplete="off" onSubmit={this.handleSubmit}>
         <Typography gutterBottom variant="headline" component="h2">
           Add New Contact
         </Typography>
